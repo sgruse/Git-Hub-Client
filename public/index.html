@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GitHub Client</title>
+  </head>
+  <body data-ng-app="GitHubApp">
+    <main ng-init="gitCtrl.getGitHub()" ng-controller="GitController as gitCtrl">
+
+      <section>
+        <img src="{{gitCtrl.imageUrl}}" alt="" />
+      </section>
+
+
+
+      <section ng-init="gitCtrl.getRepos()">
+        <h1>My Repos!!!</h1>
+        <section ng-repeat="repo in gitCtrl.allRepos">
+          <ul>
+            <li><{{repo.name}}</li>
+            <li>{{repo.html_url}}</li>
+          </ul>
+        </section>
+      </section>
+
+    </main>
+
+    <script type="text/javascript" src="./build/bundle.js"></script>
+  </body>
+</html>
