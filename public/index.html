@@ -11,14 +11,19 @@
         <img src="{{gitCtrl.imageUrl}}" alt="" />
       </section>
 
+      <section>
+        <h2>GitHub Client for Sam Gruse</h2>
+        <h4>Followers: {{gitCtrl.followers}}</h4>
+        <h4>Following: {{gitCtrl.following}}</h4>
+      </section>
 
 
       <section ng-init="gitCtrl.getRepos()">
-        <h1>My Repos!!!</h1>
+        <h4>My Repos!!!</h4>
         <section ng-repeat="repo in gitCtrl.allRepos">
           <ul>
-            <li><{{repo.name}}</li>
-            <li>{{repo.html_url}}</li>
+            <li>{{repo.name}}</li>
+            <li>View this repo at: <a href="{{repo.html_url}}">{{repo.name}}</a></li>
           </ul>
         </section>
       </section>
